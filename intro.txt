@@ -1,0 +1,3 @@
+jdk -> java development kit (it includes jre and jvm)
+jre-> java runtime environment ( it provides envorment to run out file and provides methods )
+jvm -> java virtual machine ( it is a place where our code actually runs)
