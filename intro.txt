@@ -1,12 +1,56 @@
-jdk -> java development kit (it includes jre and jvm)
-jre-> java runtime environment ( it provides envorment to run out file and provides methods )
-jvm -> java virtual machine ( it is a place where our code actually runs)
+jdk -> java development kit (it includes JRE and JVM)
+jre-> java runtime environment ( it provides an environment to run out files and provides methods )
+JVM -> java virtual machine ( it is a place where our code actually runs)
 
 
 ** String **
 mutable -> it can be changeable
 nonmutable -> it can't be changed
-note: in java string are immutable
+note: In Java strings are immutable
 
-StringBuilder -> not thread safe
-StringBuffer -> thead safe
+StringBuilder -> not thread-safe
+StringBuffer -> thread-safe
+
+** Some Class concepts **
+
+1) Upcasting:
+
+we can upcast an object to its parent. but data will be from the child.
+```
+    class A{
+    	public void show() {
+    		System.out.println("I am in A");
+    	}
+    }
+    class C extends A{
+    	@Override
+    	public void show() {
+    		System.out.println("I am in C");
+    	}
+    	public void show1() {
+    		System.out.println(" this is in c");
+    	}
+    }
+    
+    public class B {
+    	public static void main(String[] args) {
+    		A obj =(A) new C();
+    //		obj.show1();//We have upcasted that's why we are not able to access show1 but data will be of C
+    		obj.show();
+    	}
+    	
+    }
+```
+```
+2) DownCasting:
+public class B {
+	public static void main(String[] args) {
+		A obj = new C();
+		C obj1 = (C) obj; // downcast
+		obj1.show();
+	}
+}
+```
+
+
+
